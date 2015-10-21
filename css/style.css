@@ -154,8 +154,8 @@ h3 {
 
 #main-canvas {
     display:block;
-    width:100%;
-    height:100%;
+    width:100vw;
+    height:100vh;
     z-index:1;
     background:url("../images/vindesign3.jpg") center center no-repeat;
     background-size:cover;
@@ -215,7 +215,6 @@ h3 {
 
 
 
-
 .block-links {
     text-align: center;
 }
@@ -248,13 +247,10 @@ h3 {
 }
 
 
-
-#stat-block {
-    /*background:lightslategrey;*/
-}
 #stat-blocks {
     overflow:hidden;
     padding:20px 0;
+    display:none;
 }
 #stat-blocks li {
     width:33.33333%;

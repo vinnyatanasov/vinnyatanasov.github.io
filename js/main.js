@@ -53,7 +53,6 @@
         
         var h = window.innerHeight;
         
-        
         // position other elements according to height
         scrollContent.style.top = h;
         canvas.height = h;
