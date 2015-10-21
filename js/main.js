@@ -4,57 +4,86 @@
         scrollContent = document.getElementById("scroll-content"),
         canvas = document.getElementById("main-canvas");
     
+    var animationConfig = {
+        fade: true,
+        dist: -140
+    };
+    
     // so we can stop animations on mobile devices
     var mob = false;
     
-    var h = set();
+    // set sizes and store window height
+    var wHeight = set();
     
-    // reset sizes on page resize
-    window.onresize = set;
+    initEvents();
     
-    // scroll function
-    window.onscroll = function() {
+    // bind events
+    function initEvents(){
         
-        if (!mob) {
-            var scrolledY = document.documentElement.scrollTop || document.body.scrollTop;
-            
-            // use distance scrolled to reduce opacity
-            // we can go from 0 (1 opacity) to height (0 opacity)
-            // first, get value for opacity based on distance scrolled
-            var x = convert(scrolledY);
-            
-            if (x >= 0 && x <= 1) {
-                introContent.style.opacity = x;
-                var dist = -140;
-                
-                introContent.style.transform = "translateY(" + dist*(1-x) + "px)";
+        // animate text on scroll
+        // set animation configs
+        window.onscroll = function() {
+            if (!mob) {
+                var scrolledY = document.documentElement.scrollTop || document.body.scrollTop;
+                animateText(scrolledY);
             }
+        };
+        
+        // reset sizes on page resize
+        window.onresize = function(){
+            wHeight = set();
         }
         
-    };
+        // add class to body on page load
+        window.onload = document.body.classList.add("loaded");
+        
+    }
     
     
-    // Takes a number (a) between 0 and h (max) and returns a reversed ratio [0,1], if a=h,
-    // we get 0, and if a=0, we get 1
+    function animateText(y){
+        // use distance scrolled to reduce opacity
+        // we can go from 0 (1 opacity) to height (0 opacity)
+        
+        // first, get value based on distance scrolled
+        var x = convert(y);
+        
+        if (x >= 0 && x <= 1) {
+            // fade text
+            if (animationConfig.fade) {
+                introContent.style.opacity = x;
+            }
+            
+            // move text
+            introContent.style.transform = "translateY(" + (animationConfig.dist * (1-x)) + "px)";
+        }
+    }
+    
+    
     function convert(a) {
+        // Takes a number (a) between 0 and h (max) and returns a reversed ratio [0,1], if a=h,
+        // we get 0, and if a=0, we get 1
+        
         var g = 1.1; // controls rate of change
-        var ratio = 1 - ((a/h)*g);
+        var ratio = 1 - ((a/wHeight)*g);
         //console.log(ratio);
         return ratio;
     };
     
     
-    // Updates height of scroll-content and position of intro-content based on window size.
-    // Also returns window height for use elsewhere.
     function set() {
-        // set mob to true if width is pretty small
+        // Updates height of scroll-content and position of intro-content based on window size.
+        // Also returns window height for use elsewhere.
+        
+        // set mob to true if width is smaller than some value
         var w = window.innerWidth;
         mob = (w < 700) ? true : false;
         
         var h = window.innerHeight;
         
         // position other elements according to height
-        scrollContent.style.top = h;
+        scrollContent.style.top = h + "px";
+        scrollContent.style.minHeight = h + "px";
+        
         canvas.height = h;
         
         // if mobile, set class to control some styles
@@ -73,9 +102,5 @@
         
         return h;
     };
-    
-    
-    // Render as loaded with class
-    document.body.classList.add("loaded");
     
 })();
