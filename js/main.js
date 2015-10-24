@@ -34,6 +34,14 @@
             wHeight = set();
         }
         
+        // disable coming-soon project links
+        var comingSoon = document.getElementsByClassName("coming-soon");
+        if (comingSoon.length > 0) {
+            for (var i = 0; i < comingSoon.length; i++) {
+                comingSoon[i].onclick = function(e){ e.preventDefault(); };
+            }
+        }
+        
         // add class to body on page load
         window.onload = document.body.classList.add("loaded");
         

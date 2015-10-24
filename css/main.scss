@@ -7,7 +7,6 @@ $dark-grey: #252525;
 $hover-color: orange;
 $main-font-stack: 'Roboto Slab', serif;
 
-
 body {
     background:$dark-grey;
 }
@@ -34,12 +33,12 @@ p a:hover {
 }
 
 h1, h2 {
-    text-align: center;
     font-family: $main-font-stack;
     line-height:1.25;
 }
 h1 {
     font-size:6.6em;
+    text-align: center;
     margin:0 auto 40px auto;
 }
 h2 {
@@ -53,11 +52,9 @@ h3 {
     margin:0 0 10px 0;
 }
 
-
 #page-container {
     width:100%;
 }
-
 
 #brand-link {
     padding:7px;
@@ -76,7 +73,6 @@ h3 {
 #brand-link:hover {
     color:$hover-color;
 }
-
 
 .row {
     width:100%;
@@ -97,7 +93,6 @@ h3 {
     padding:50px 30px;
     overflow:hidden;
 }
-
 
 #main-canvas {
     display:block;
@@ -124,7 +119,6 @@ h3 {
     }
 }
 
-
 #intro-content {
     position:fixed;
     width:100%;
@@ -133,8 +127,6 @@ h3 {
     -webkit-backface-visibility: hidden;
     z-index:10;
 }
-
-
 #intro-content .container {
     padding:0 30px;
 }
@@ -144,27 +136,8 @@ h3 {
     position:absolute;
     top:100%;
     z-index:20;
+    padding: 0 0 50px 0;
 }
-
-
-/* mobile specific styles */
-
-.mobile #page-container {
-    position:relative;
-}
-.mobile #intro-content {
-    position: static;
-    padding: 100px 0;
-}
-.mobile #scroll-content {
-    position:static;
-}
-.mobile #main-canvas {
-    display:none;
-    visibility:hidden;
-}
-
-
 
 .block-links {
     text-align: center;
@@ -174,7 +147,7 @@ h3 {
     margin:0;
 }
 .block-links li a {
-    padding:10px 20px;
+    padding:10px 30px;
     color:0.9;
     border-radius:4px;
     transition:background 0.1s linear;
@@ -184,19 +157,19 @@ h3 {
     margin:0 0 0 25px;
     opacity:0.75;
 }
-
-.block-links li a:hover {
-    background:rgba(0,0,0,0.1);
+.block-links li a.coming-soon {
+    cursor:default;
 }
 
-
+.block-links li a:not(.coming-soon):hover {
+    background:rgba(0,0,0,0.1);
+}
 
 .button-link {
     padding:15px;
     border:2px solid rgba(256,256,256,0.5);
     font-size:2.6em;
 }
-
 
 #stat-blocks {
     overflow:hidden;
@@ -225,6 +198,22 @@ h3 {
     color:orange;
 }
 
+/* mobile specific styles */
+
+.mobile #page-container {
+    position:relative;
+}
+.mobile #intro-content {
+    position: static;
+    padding: 100px 0;
+}
+.mobile #scroll-content {
+    position:static;
+}
+.mobile #main-canvas {
+    display:none;
+    visibility:hidden;
+}
 
 /* footer */
 
@@ -237,14 +226,18 @@ footer {
     width:100%;
 }
 footer .container {
-    padding:25px 0;
+    padding:18px 30px;
 }
-footer p:last-child {
-    font-family:$main-font-stack;
-    opacity:0.2;
-    font-size:2em;
+footer p {
+    opacity:0.3;
+    text-align:left;
+    font-size:1.7em;
     margin:0;
 }
+footer p span {
+    margin:0 30px 0 0;
+}
+
 
 /* media queries */
 
