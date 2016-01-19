@@ -25,7 +25,6 @@ module.exports = function(grunt) {
         watch: {
             scripts: {
                 files: ['js/*.js'],
-                tasks: ['uglify'],
                 options: {
                     spawn: false
                 }
@@ -46,7 +45,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
     
-    // Tell what to do when run 'grunt' command
     grunt.registerTask('default', ['uglify', 'sass']);
-    
+
+    grunt.registerTask('dev', ['watch']);
+
+    grunt.registerTask('build', ['uglify', 'sass']);
 };

@@ -1,9 +1,9 @@
 (function (){
     
-    var introContent = document.getElementById("intro-content"),
-        scrollContent = document.getElementById("scroll-content"),
-        canvas = document.getElementById("main-canvas");
-    
+    var introContent = document.getElementsByClassName("hero__text")[0],
+        scrollContent = document.getElementsByClassName("scroll-content")[0],
+        canvas = document.getElementsByClassName("hero")[0];
+
     var animationConfig = {
         fade: true,
         dist: -140
@@ -62,7 +62,7 @@
             }
             
             // move text
-            introContent.style.transform = "translateY(" + (animationConfig.dist * (1-x)) + "px)";
+            //introContent.style.transform = "translateY(" + (animationConfig.dist * (1-x)) + "px)";
         }
     }
     
@@ -71,12 +71,11 @@
         // Takes a number (a) between 0 and h (max) and returns a reversed ratio [0,1], if a=h,
         // we get 0, and if a=0, we get 1
         
-        var g = 1.1; // controls rate of change
+        var g = 1.2; // controls rate of change
         var ratio = 1 - ((a/wHeight)*g);
         //console.log(ratio);
         return ratio;
     };
-    
     
     function set() {
         // Updates height of scroll-content and position of intro-content based on window size.

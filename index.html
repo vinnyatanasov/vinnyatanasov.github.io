@@ -14,73 +14,71 @@
         <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     </head>
     <body>
-        <a href="index.html" id="brand-link">Vincent<br>Atanasov</a>
+        <a href="index.html" class="brand-link">Vincent<br>Atanasov</a>
         
-        <div id="page-container">
-            <canvas id="main-canvas"></canvas>
+        <div class="page-container">
+            <section class="row hero">
+                <h1 class="hero__text">I'm Vinny, a front end<br>engineer and designer</h1>
+            </section>
             
-            <div class="row" id="intro-content">
-                <div class="container">
-                    <h1>I'm Vinny, a front end<br>developer and designer</h1>
-                    <p>Scroll for recent Web work, or check <a href="https://github.com/vinnyatanasov" target="_blank">Github</a> for other projects. Get in touch by <a href="mailto:hello@vindesign.co.uk">email</a>, <a href="https://www.linkedin.com/in/vincentatanasov" target="_blank">LinkedIn</a>, or <a href="https://twitter.com/vinnyatanasov" target="_blank">Twitter</a>.</p>
-                </div>
-            </div>
-            
-            <div class="row" id="scroll-content">
-                <section id="work-block">
+            <ul>
+                <li><a href="https://github.com/vinnyatanasov" target="_blank">Github</a></li>
+                <li><a href="https://www.linkedin.com/in/vincentatanasov" target="_blank">LinkedIn</a></li>
+                <li><a href="https://twitter.com/vinnyatanasov" target="_blank">Twitter</a></li>
+            </ul>
+
+            <div class="row scroll-content">
+                <section class="work-block">
                     <div class="container">
-                        <h2>Web projects</h2>
+                        <!--<h2>Recent projects</h2>-->
                         <ul class="block-links">
-                            <li>
+                            <li class="block-links__item">
                                 <a href="http://zone19.co.uk/" target="_blank">
-                                    <h3>Zone 19 <span>front end, woocommerce</span></h3>
+                                    <h3>Zone 19</h3>
+                                    <p>front end, woocommerce</p>
                                 </a>
                             </li>
-                            <li>
+                            <li class="block-links__item">
                                 <a href="http://www.houseofbeautyboutique.com/" target="_blank">
-                                    <h3>House of Beauty <span>front end, shopify</span></h3>
+                                    <h3>House of Beauty</h3>
+                                    <p>front end, shopify</p>
                                 </a>
                             </li>
-                            <li>
+                            <li class="block-links__item">
                                 <a href="http://www.allthatnetball.com/" target="_blank">
-                                    <h3>All that netball <span>front end, shopify, design</span></h3>
+                                    <h3>All that netball</h3>
+                                    <p>front end, shopify, design</p>
                                 </a>
                             </li>
-                            <li>
+                            <li class="block-links__item">
                                 <a href="http://wirralridingcentre.com/" target="_blank">
-                                    <h3>Wirral Riding Centre <span>front end, wordpress</span></h3>
+                                    <h3>Wirral Riding Centre</h3>
+                                    <p>front end, wordpress</p>
                                 </a>
                             </li>
-                            <li>
+                            <li class="block-links__item">
                                 <a href="http://www.castleviewprimaryschool.co.uk/" target="_blank">
-                                    <h3>Castle View Primary School <span>front end, wordpress, design</span></h3>
+                                    <h3>Castle View Primary School</h3>
+                                    <p>front end, wordpress, design</p>
                                 </a>
                             </li>
-                            <li>
+                            <li class="block-links__item">
                                 <a href="http://cheshireploughing.co.uk/" target="_blank">
-                                    <h3>Cheshire Ploughing <span>front end, wordpress</span></h3>
+                                    <h3>Cheshire Ploughing</h3>
+                                    <p>front end, wordpress</p>
                                 </a>
                             </li>
-                            <li>
+                            <li class="block-links__item">
                                 <a href="http://oger-consulting.com/en/" target="_blank">
-                                    <h3>Öger Consulting <span>front end, wordpress</span></h3>
+                                    <h3>Öger Consulting</h3>
+                                    <p>front end, wordpress</p>
                                 </a>
                             </li>
-                            <li>
+                            <li class="block-links__item">
                                 <a href="http://www.edmontongreencentre.co.uk/" target="_blank">
-                                    <h3>Edmonton Green <span>front end, wordpress</span></h3>
+                                    <h3>Edmonton Green</h3>
+                                    <p>front end, wordpress</p>
                                 </a>
-                            </li>
-                        </ul>
-                        <ul id="stat-blocks">
-                            <li>
-                                <span><span>12</span>WordPress sites</span>
-                            </li>
-                            <li>
-                                <span><span>4</span>Shopify stores</span>
-                            </li>
-                            <li>
-                                <span><span>3</span>cities worked in</span>
                             </li>
                         </ul>
                     </div>
@@ -94,7 +92,8 @@
         </div>
         
         <!-- js -->
-        <script defer src="js/build/main.min.js"></script>
+        <script defer src="js/main.js"></script>
+        
         <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
