@@ -1,8 +1,8 @@
 (function (){
     
-    var introContent = document.getElementById("intro-content"),
-        scrollContent = document.getElementById("scroll-content"),
-        canvas = document.getElementById("main-canvas");
+    var introContent = document.querySelector(".intro-content"),
+        scrollContent = document.querySelector(".scroll-content"),
+        canvas = document.querySelector(".main-bg");
     
     var animationConfig = {
         fade: true,
@@ -19,7 +19,6 @@
     
     // bind events
     function initEvents(){
-        
         // animate text on scroll
         // set animation configs
         window.onscroll = function() {
@@ -32,14 +31,6 @@
         // reset sizes on page resize
         window.onresize = function(){
             wHeight = set();
-        }
-        
-        // disable coming-soon project links
-        var comingSoon = document.getElementsByClassName("coming-soon");
-        if (comingSoon.length > 0) {
-            for (var i = 0; i < comingSoon.length; i++) {
-                comingSoon[i].onclick = function(e){ e.preventDefault(); };
-            }
         }
         
         // add class to body on page load
@@ -88,10 +79,12 @@
         
         var h = window.innerHeight;
         
-        // position other elements according to height
-        scrollContent.style.top = h + "px";
-        scrollContent.style.minHeight = h + "px";
-        
+        if (scrollContent) {
+            // position other elements according to height
+            // scrollContent.style.top = h + "px";
+            scrollContent.style.minHeight = h + "px";
+        }
+
         canvas.height = h;
         
         // if mobile, set class to control some styles

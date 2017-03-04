@@ -14,84 +14,62 @@
         <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     </head>
     <body>
-        <a href="index.html" id="brand-link">Vincent<br>Atanasov</a>
+        <header class="site-header">
+            <a href="mailto:hello@vindesign.co.uk" class="btn email-btn">Email me</a>
+            <a href="/" class="brand-link">Vincent<br>Atanasov</a>
+        </header>
         
-        <div id="page-container">
-            <canvas id="main-canvas"></canvas>
+        <div class="page-container">
+            <div class="main-bg"></div>
             
-            <div class="row" id="intro-content">
+            <div class="row intro-content">
                 <div class="container">
-                    <h1>I'm Vinny, a front end<br>developer and designer</h1>
-                    <p>Scroll for recent Web work, or check <a href="https://github.com/vinnyatanasov" target="_blank">Github</a> for other projects. Get in touch by <a href="mailto:hello@vindesign.co.uk">email</a>, <a href="https://www.linkedin.com/in/vincentatanasov" target="_blank">LinkedIn</a>, or <a href="https://twitter.com/vinnyatanasov" target="_blank">Twitter</a>.</p>
+                    <div class="intro-content__pic"></div>
+                    <h1>I'm Vinny, a front-end<br>engineer &amp; designer.</h1>
                 </div>
             </div>
             
-            <div class="row" id="scroll-content">
-                <section id="work-block">
-                    <div class="container">
-                        <h2>Web projects</h2>
-                        <ul class="block-links">
-                            <li>
-                                <a href="http://zone19.co.uk/" target="_blank">
-                                    <h3>Zone 19 <span>front end, woocommerce</span></h3>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://www.houseofbeautyboutique.com/" target="_blank">
-                                    <h3>House of Beauty <span>front end, shopify</span></h3>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://www.allthatnetball.com/" target="_blank">
-                                    <h3>All that netball <span>front end, shopify, design</span></h3>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://wirralridingcentre.com/" target="_blank">
-                                    <h3>Wirral Riding Centre <span>front end, wordpress</span></h3>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://www.castleviewprimaryschool.co.uk/" target="_blank">
-                                    <h3>Castle View Primary School <span>front end, wordpress, design</span></h3>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://cheshireploughing.co.uk/" target="_blank">
-                                    <h3>Cheshire Ploughing <span>front end, wordpress</span></h3>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://oger-consulting.com/en/" target="_blank">
-                                    <h3>Öger Consulting <span>front end, wordpress</span></h3>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://www.edmontongreencentre.co.uk/" target="_blank">
-                                    <h3>Edmonton Green <span>front end, wordpress</span></h3>
-                                </a>
-                            </li>
-                        </ul>
-                        <ul id="stat-blocks">
-                            <li>
-                                <span><span>12</span>WordPress sites</span>
-                            </li>
-                            <li>
-                                <span><span>4</span>Shopify stores</span>
-                            </li>
-                            <li>
-                                <span><span>3</span>cities worked in</span>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
+            <div class="row scroll-content">
+                <div class="container">
+                    <h2>Selected projects</h2>
+                    <ul class="block-links">
+                        <li>
+                            <a href="http://zone19.co.uk/" target="_blank">
+                                <h3>Zone 19 <span>front end, design, woocommerce</span></h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://wirralridingcentre.com/" target="_blank">
+                                <h3>Wirral Riding Centre <span>front end, wordpress</span></h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.castleviewprimaryschool.co.uk/" target="_blank">
+                                <h3>Castle View Primary School <span>front end, design, wordpress</span></h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://cheshireploughing.co.uk/" target="_blank">
+                                <h3>Cheshire Ploughing <span>front end, wordpress</span></h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.edmontongreencentre.co.uk/" target="_blank">
+                                <h3>Edmonton Green <span>front end, wordpress</span></h3>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
                 <footer>
                     <div class="container">
-                        <p><span>&copy 2015</span>Photograph from <a href="http://deathtothestockphoto.com/" target="_blank">Death to Stock</a></p>
+                        <p><span>&copy; <script>var y=new Date();y=y.getFullYear();document.write(y);</script></span>Photograph from <a href="http://deathtothestockphoto.com/" target="_blank">Death to Stock</a></p>
                     </div>
                 </footer>
             </div>
+            
         </div>
+
         
         <!-- js -->
         <script defer src="js/build/main.min.js"></script>
